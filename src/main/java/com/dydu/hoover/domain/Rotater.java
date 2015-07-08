@@ -1,6 +1,4 @@
-package com.dydu.hoover.domain.hoover;
-
-import com.dydu.hoover.domain.Move;
+package com.dydu.hoover.domain;
 
 @FunctionalInterface
 public interface Rotater {

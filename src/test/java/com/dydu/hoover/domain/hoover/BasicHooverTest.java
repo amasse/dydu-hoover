@@ -14,7 +14,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class BasicHooverTest  {
 
     @Test
-    public void test_should_clean_dydu_maze() {
+    public void should_clean_dydu_maze() {
         Hoover hoover = new BasicHoover();
         RectangleRoom room = RectangleRoom.buildFrom("/hoover1.txt");
         Path path = new RoomCleaner(hoover, room).clean();
@@ -23,7 +23,7 @@ public class BasicHooverTest  {
     }
 
     @Test
-    public void test_should_clean_the_big_square() {
+    public void should_clean_the_big_square() {
         Hoover hoover = new BasicHoover();
         RectangleRoom room = RectangleRoom.buildFrom("/the_big_square.txt");
         Path path = new RoomCleaner(hoover, room).clean();
@@ -32,7 +32,7 @@ public class BasicHooverTest  {
     }
 
     @Test
-    public void test_should_clean_the_circle() {
+    public void should_clean_the_circle() {
         Hoover hoover = new BasicHoover();
         RectangleRoom room = RectangleRoom.buildFrom("/the_circle.txt");
         Path path = new RoomCleaner(hoover, room).clean();
@@ -41,7 +41,7 @@ public class BasicHooverTest  {
     }
 
     @Test
-    public void test_should_clean_the_random() {
+    public void should_clean_the_random() {
         Hoover hoover = new BasicHoover();
         RectangleRoom room = RectangleRoom.buildFrom("/the_hardest.txt");
         Path path = new RoomCleaner(hoover, room).clean();
@@ -50,7 +50,7 @@ public class BasicHooverTest  {
     }
 
     @Test
-    public void test_should_clean_the_vicious() {
+    public void should_clean_the_vicious() {
         Hoover hoover = new BasicHoover();
         RectangleRoom room = RectangleRoom.buildFrom("/the_vicious.txt");
         Path path = new RoomCleaner(hoover, room).clean();
@@ -59,7 +59,7 @@ public class BasicHooverTest  {
     }
 
     @Test
-    public void test_should_clean_the_cross() {
+    public void should_clean_the_cross() {
         Hoover hoover = new BasicHoover();
         RectangleRoom room = RectangleRoom.buildFrom("/the_cross.txt");
         Path path = new RoomCleaner(hoover, room).clean();
@@ -68,7 +68,7 @@ public class BasicHooverTest  {
     }
 
     @Test
-    public void test_should_clean_the_subject() {
+    public void should_clean_the_subject() {
         List<Integer> counts = Lists.newArrayList();
         for (int i = 0; i < 100; i++) {
             Hoover hoover = new BasicHoover();

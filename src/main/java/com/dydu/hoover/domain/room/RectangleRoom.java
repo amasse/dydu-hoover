@@ -88,7 +88,7 @@ public class RectangleRoom {
     }
 
     /**
-     * Print the maze, from top to bottom, in the format used in the exercice context
+     * Print the maze, from top to bottom, in the format used in the exercise context
      */
     public String print(Position hooverPosition) {
         StringWriter writer = new StringWriter();

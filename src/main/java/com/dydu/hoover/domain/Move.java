@@ -16,7 +16,7 @@ public enum Move {
     }
 
     /**
-     * The function that computes the resulting position of the move, base on an initial position
+     * The function that computes the resulting position of the move, based on an initial position
      */
     private Function<Position, Position> movement;
 

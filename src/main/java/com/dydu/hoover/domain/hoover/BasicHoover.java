@@ -1,6 +1,7 @@
 package com.dydu.hoover.domain.hoover;
 
 import com.dydu.hoover.domain.Move;
+import com.dydu.hoover.domain.Rotater;
 import com.dydu.hoover.domain.room.TileTypeViewer;
 
 import java.util.Optional;

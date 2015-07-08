@@ -54,7 +54,6 @@ public class RoomCleaner implements TileTypeViewer {
             } else {
                 break;
             }
-//            System.out.println(room.print(hooverPosition));
         } while (!room.isClean() && loopCount < limit);
         return path;
     }
