@@ -82,7 +82,6 @@ public class RectangleRoom {
     public void clean(Position position) {
         Preconditions.checkArgument(!getTileAt(position).equals(TileType.WALL));
         if (isCleanable(position)) {
-            System.out.println("Cleaning position : " + position);
             tiles.put(position, TileType.CLEAN);
         }
     }
@@ -121,7 +120,7 @@ public class RectangleRoom {
             for (int i = 0; i < lines.size(); i++) {
                 String line = lines.get(i);
                 for (int j = 0; j < line.length(); j++) {
-                    tiles.put(new Position(j + 1, lines.size() - i), TileType.getFor(line.charAt(j)));
+                    tiles.put(new Position(j + 1, i + 1), TileType.getFor(line.charAt(j)));
                 }
             }
             Bounds bounds = Bounds.createPositiveBounds(lines.get(0).length(), lines.size());
@@ -147,10 +146,12 @@ public class RectangleRoom {
      * @return dirty Room
      */
     public static RectangleRoom buildFrom(String[][] matrix) {
-        Bounds bounds = Bounds.createPositiveBounds(matrix[0].length - 1, matrix.length - 1);
+        int xLength = matrix[0].length;
+        int yLength = matrix.length;
+        Bounds bounds = Bounds.createPositiveBounds(xLength, yLength);
         Map<Position, TileType> tiles = Maps.newHashMap();
         bounds.allPositionsInBounds().forEach(
-                p -> tiles.put(p, TileType.getFor(matrix[p.getY()][p.getX()].toCharArray()[0]))
+                p -> tiles.put(p, TileType.getFor(matrix[p.getY() - 1][p.getX() - 1].toCharArray()[0]))
         );
         return new RectangleRoom(tiles, bounds);
     }

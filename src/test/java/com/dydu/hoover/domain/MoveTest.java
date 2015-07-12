@@ -21,13 +21,13 @@ public class MoveTest {
     @Test
     public void test_should_move_up() {
         Position initial = new Position(1,1);
-        assertThat(Move.UP.from(initial)).isEqualTo(new Position(1,2));
+        assertThat(Move.UP.from(initial)).isEqualTo(new Position(1,0));
     }
 
     @Test
     public void test_should_move_down() {
         Position initial = new Position(1,1);
-        assertThat(Move.DOWN.from(initial)).isEqualTo(new Position(1,0));
+        assertThat(Move.DOWN.from(initial)).isEqualTo(new Position(1,2));
     }
 
 }

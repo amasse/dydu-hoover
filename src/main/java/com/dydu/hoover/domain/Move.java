@@ -8,8 +8,8 @@ import java.util.function.Function;
 public enum Move {
     LEFT(   p -> new Position(p.getX() - 1, p.getY())),
     RIGHT(  p -> new Position(p.getX() + 1, p.getY())),
-    UP(     p -> new Position(p.getX(), p.getY() + 1)),
-    DOWN(   p -> new Position(p.getX(), p.getY() -1));
+    UP(     p -> new Position(p.getX(), p.getY() - 1)),
+    DOWN(   p -> new Position(p.getX(), p.getY() + 1));
 
     Move(Function<Position, Position> movement) {
         this.movement = movement;

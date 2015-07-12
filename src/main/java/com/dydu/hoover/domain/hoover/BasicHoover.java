@@ -27,7 +27,7 @@ public class BasicHoover extends AbstractHoover {
     }
 
     private Optional<Move> chooseForwardDirection() {
-        return Stream.of(Move.values())
+        return Stream.of(Move.LEFT, Move.RIGHT, Move.UP, Move.DOWN)
                 .filter(super::isDirty)
                 .findFirst();
     }

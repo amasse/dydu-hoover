@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class BasicHooverTest  {
+public class BasicHooverTest {
 
     @Test
     public void should_clean_dydu_maze() {
@@ -69,16 +69,12 @@ public class BasicHooverTest  {
 
     @Test
     public void should_clean_the_subject() {
-        List<Integer> counts = Lists.newArrayList();
-        for (int i = 0; i < 100; i++) {
-            Hoover hoover = new BasicHoover();
-            RectangleRoom room = RectangleRoom.buildFrom("/the_subject.txt");
-            Path path = new RoomCleaner(hoover, room).clean();
-            System.out.println("it took " + path.getNumberOfSteps() + " steps to complete the subject room");
-            counts.add(path.getNumberOfSteps());
-            assertThat(room.isClean()).isTrue();
-        }
-        System.out.println("Average efficiency of hover is " + counts.stream().collect(Collectors.averagingInt(m -> m)));
+        Hoover hoover = new BasicHoover();
+        RectangleRoom room = RectangleRoom.buildFrom("/the_subject.txt");
+        Path path = new RoomCleaner(hoover, room).clean();
+        System.out.println("it took " + path.getNumberOfSteps() + " steps to complete the subject room");
+        assertThat(room.isClean()).isTrue();
+
     }
 
 

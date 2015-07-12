@@ -1,5 +1,6 @@
 package com.dydu.hoover.domain;
 
+import com.dydu.hoover.domain.hoover.BasicHoover;
 import com.dydu.hoover.domain.hoover.Hoover;
 import com.dydu.hoover.domain.room.RectangleRoom;
 import com.dydu.hoover.domain.room.TileType;
@@ -27,8 +28,6 @@ public class RoomCleaner implements TileTypeViewer {
         this.room = room;
         this.hooverPosition = hooverPosition;
     }
-
-
 
     /**
      * Main method to clean the registered room with the registered hoover
@@ -63,5 +62,20 @@ public class RoomCleaner implements TileTypeViewer {
         return room.getTileAt(move.from(hooverPosition));
     }
 
+
+    /**
+     * Main method to execute a hoover on a file given as first parameter
+     *
+     * @param args : file name for the maze
+     */
+    public static void main(String[] args) {
+        if (args.length == 0) {
+            throw new IllegalArgumentException("Please provide a file name for the room");
+        }
+        Hoover hoover = new BasicHoover();
+        RectangleRoom room = RectangleRoom.buildFrom(args[0]);
+        Path path = new RoomCleaner(hoover, room).clean();
+        System.out.println(path.print());
+    }
 
 }

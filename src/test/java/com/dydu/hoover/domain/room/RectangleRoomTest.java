@@ -86,16 +86,16 @@ public class RectangleRoomTest  {
     public void test_a_room_should_be_build_from_file() throws Exception {
         RectangleRoom room = RectangleRoom.buildFrom("/maze1.txt");
         assertThat(room.getDirtyPositions()).containsOnly(
-                new Position(1, 3),
+                new Position(1, 2),
                 new Position(2, 3),
                 new Position(2, 2),
-                new Position(3, 2),
+                new Position(3, 3),
                 new Position(4, 2),
                 new Position(4, 3),
-                new Position(5, 3),
+                new Position(5, 2),
                 new Position(6, 3),
                 new Position(6, 2),
-                new Position(7, 2)
+                new Position(7, 3)
         );
     }
 
@@ -104,16 +104,16 @@ public class RectangleRoomTest  {
         String[][] matrix = new MatrixFileReader().readFile("/maze1.txt");
         RectangleRoom room = RectangleRoom.buildFrom(matrix);
         assertThat(room.getDirtyPositions()).containsOnly(
-                new Position(1, 3),
+                new Position(1, 2),
                 new Position(2, 3),
                 new Position(2, 2),
-                new Position(3, 2),
+                new Position(3, 3),
                 new Position(4, 2),
                 new Position(4, 3),
-                new Position(5, 3),
+                new Position(5, 2),
                 new Position(6, 3),
                 new Position(6, 2),
-                new Position(7, 2)
+                new Position(7, 3)
         );
     }
 }
